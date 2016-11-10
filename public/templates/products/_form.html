@@ -1,0 +1,30 @@
+<div class="form-group" ng-class="{'has-error' : submitted && productForm.name.$invalid}">
+    <label class="control-label col-md-3"> Name <span class="required">* </span> </label>
+    <div class="col-md-4">
+        <input type="text" name="name" class="form-control" ng-model="product.name" required placeholder="name"/>
+    </div>
+    <p ng-show=" submitted && productForm.name.$invalid" class="help-block">Name is required.</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error' : submitted && productForm.price.$invalid}">
+    <label class="control-label col-md-3"> Price <span class="required">* </span> </label>
+    <div class="col-md-4">
+        <input type="text" name="price" class="form-control" ng-model="product.price" required placeholder="price"/>
+    </div>
+    <p ng-show=" submitted && productForm.price.$invalid" class="help-block">Price is required.</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error' : submitted && productForm.discount.$invalid}">
+    <label class="control-label col-md-3"> Discount <span class="required">* </span> </label>
+    <div class="col-md-4">
+        <input type="text" name="discount" class="form-control" ng-model="product.discount" required placeholder="Discount"/>
+    </div>
+    <p ng-show=" submitted && productForm.discount.$invalid" class="help-block">Discount is required.</p>
+</div>
+
+<div class="form-group">
+    <div class="pull-left">
+        <a class="btn btn-default" href="/"> Back</a>
+        <button type="submit" class="btn btn-primary" ng-click="submitted=true">Submit</button>
+    </div>
+</div>
