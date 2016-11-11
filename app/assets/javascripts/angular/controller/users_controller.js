@@ -15,19 +15,13 @@ myApp.factory('Product', ['$resource', function($resource){
     delete: { method: 'DELETE', params: {id: '@id'} }
   });
 }]);
-// myApp.factory('Product', function($resource) {
-//   return $resource("Products/:id", { id: '@id' }, {
-//     index:   { method: 'GET', isArray: true, responseType: 'json' },
-//     show:    { method: 'GET', responseType: 'json' },
-//     update:  { method: 'PUT', responseType: 'json' }
-//   });
-// })
+
 //Controller
-myApp.controller("ProductListCtr", ['$scope', '$http', '$resource', 'Products', 'Product', '$location', function($scope, $http, $resource, Products, Products, $location) {
+myApp.controller("ProductListCtr", ['$scope', '$http', '$resource', 'Products', 'Product', '$location', function($scope, $http, $resource, Products, Product, $location) {
 
   $scope.products = Products.query();
 
-  $scope.deleteProduct = function (producId) {
+  $scope.deleteProduct = function (productId) {
     if (confirm("Are you sure you want to delete this product?")){
       Product.delete({ id: productId }, function(){
         $scope.products = Products.query();

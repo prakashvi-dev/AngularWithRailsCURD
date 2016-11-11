@@ -5,18 +5,21 @@
     <h3 class="block">Products</h3>
     <table class="table table-striped">
       <tr>
-          <th> Name</th>
-          <th> Price</th>
-          <th>Discount</th>
-          <th></th>
+          <th> Name </th>
+          <th> Price </th>
+          <th> Discount </th>
+          <th> Actions </th>
       </tr>
       <tr ng-hide="products.length" >
           <td colspan="5">No Product found, Please create one.</td>
       </tr>
       <tr ng-show="products.length" ng-repeat="product in products">
-          <td>{{product.name}}</td>
-          <td>{{product.price}}</td>
-          <td>{{product.discount}}</td>
+          <td> {{product.name}} </td>
+          <td> {{product.price}} </td>
+          <td> {{product.discount}} </td>
+          <td>
+            <a href="#/products/{{product.id}}/edit">Edit</a> | <a href="" ng-click="deleteProduct(product.id)">Remove</a>
+          </td>
       </tr>
     </table>
   </div>
