@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
-  before_action :get_user, except: [:index, :create]
+  before_action :get_user, except: [:index, :create, :home]
   respond_to :html, :json
-
+  
+  def home
+    p "callllllllllllllllll"
+  end
+  
   def index
     @user = User.all
     respond_with(@users) do |format|

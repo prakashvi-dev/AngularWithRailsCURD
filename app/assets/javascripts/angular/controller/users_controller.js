@@ -103,8 +103,8 @@ myApp.controller("UserUpdateCtr", ['$scope', '$resource', 'User', '$location', '
 
 }]);
 
-myApp.controller("ProductAddCtr", ['$scope', '$resource', 'Products', '$location', function($scope, $resource, products, $location) {
-  // $scope.product = Product.POST({id: $routeParams.id})
+myApp.controller("ProductAddCtr", ['$scope', '$resource', 'Products', '$location', function($scope, $resource, Products, $location) {
+   $scope.product = { name: '', price: '', discount: '' }
   $scope.save = function () {
     if ($scope.productForm.$valid){
       Products.create({product: $scope.product}, function(){
@@ -120,6 +120,7 @@ myApp.controller("ProductAddCtr", ['$scope', '$resource', 'Products', '$location
 
 
 myApp.controller("UserAddCtr", ['$scope', '$resource', 'Users', '$location', function($scope, $resource, Users, $location) {
+  console.log(Users);
   $scope.user = {addresses: [{street1: '', street2: '', city: '', state: '', country: '', zipcode: '' }]}
   $scope.save = function () {
     if ($scope.userForm.$valid){
@@ -177,7 +178,8 @@ myApp.config([
     });
 
     $routeProvider.otherwise({
-      redirectTo: '/users'
+      redirectTo: '',
+      templateUrl: '/templates/users/home.html'
     });
   }
 ]);

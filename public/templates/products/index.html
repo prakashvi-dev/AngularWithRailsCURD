@@ -18,9 +18,15 @@
           <td> {{product.price}} </td>
           <td> {{product.discount}} </td>
           <td>
-            <a href="#/products/{{product.id}}/edit">Edit</a> | <a href="" ng-click="deleteProduct(product.id)">Remove</a>
+            <a class="btn btn-success" href="#/products/{{product.id}}/edit">Edit</a> 
+            <a class="btn btn-danger"  href="" ng-click="deleteProduct(product.id)">Remove</a>
           </td>
       </tr>
     </table>
+  </div>
+  <div class="form-group">
+    <div class="pull-left">
+      <a class="btn btn-default" href="/"> Back</a>
+    </div>
   </div>
 </div>

@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-   @product= Product.new(product_params)
+   @product = Product.new(product_params)
     if @product.save
       render json: @product.as_json, status: :ok
     else
@@ -39,6 +39,9 @@ class ProductsController < ApplicationController
   private
 
   def product_params
+    p "================================="
+    p params.inspect
+    p "========================================================"
     params.require(:product).permit(:name, :price, :discount)
     # name: nil, price: nil, discount: nil,
   end

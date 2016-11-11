@@ -2,7 +2,6 @@
 <div class="row">
   <div class="col-md-12">
     <a class="btn btn-primary" href="#/users/new">Create a user</a>
-     <a class="btn btn-success" href="#/products">Products</a>
     <h3 class="block">Users</h3>
     <table class="table table-striped">
       <tr>
@@ -10,7 +9,7 @@
         <th>Last Name</th>
         <th>Email</th>
         <th>Phone</th>
-        <th></th>
+        <th> Action </th>
       </tr>
       <tr ng-hide="users.length" >
           <td colspan="5">No users found, Please create one.</td>
@@ -21,9 +20,15 @@
         <td>{{user.email}}</td>
         <td>{{user.phone}}</td>
         <td>
-          <a href="#/users/{{user.id}}/edit">Edit</a> | <a href="" ng-click="deleteUser(user.id)">Remove</a>
+          <a class="btn btn-success" href="#/users/{{user.id}}/edit">Edit</a> 
+          <a class="btn btn-danger" href="" ng-click="deleteUser(user.id)">Remove</a>
         </td>
       </tr>
     </table>
+  </div>
+  <div class="form-group">
+    <div class="pull-left">
+      <a class="btn btn-default" href="/"> Back</a>
+    </div>
   </div>
 </div>
